@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>G‘allaorol IM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="hero">
+    <h1 class="hero-title animate">Xush kelibsiz</h1>
+    <h2 class="hero-subtitle animate">G‘allaorol tumani<br>Ixtisoslashtirilgan maktabiga</h2>
+    <div class="hero-buttons animate">
+      <button onclick="openPage('about')">Maktab haqida</button>
+      <button onclick="openPage('teachers')">Ustozlar</button>
+    </div>
+    <div class="hero-socials animate">
+      <a href="https://t.me/PTMagentligi" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.instagram.com/piima.uz" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/groups/658351789215200/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <div class="about-hero animate">
+    <h2>Maktab haqida</h2>
+    <div class="about-cards">
+      <div class="card clickable" onclick="toggleContent('malumot')">
+        <i class="fas fa-info-circle"></i>
+        <h3>Malumot</h3>
+        <div class="card-content" id="malumot">
+          <p>O'ZBEKISTON RESPUBLIKASI MAKTABGACHA VA MAKTAB TA'LIMI VAZIRLIGI HUJURIDAGI IXTISOSLASHTIRILGAN TA'LIM MUASSASALARI AGENTLIGI TIZIMIDAGI G'ALLAOROL TUMAN IXTISOSLASHTIRILGAN MAKTABI</p>
+        </div>
+      </div>
+    </div>
+    <button class="back-btn" onclick="goHome()">⬅ Orqaga</button>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers" class="page">
+  <div class="teachers-hero animate">
+    <h2>Ustozlar</h2>
+    <div class="filter-buttons">
+      <button onclick="filterTeacher('all')">Barchasi</button>
+      <button onclick="filterTeacher('Matematika')">Matematika</button>
+      <button onclick="filterTeacher('Ingliz tili')">Ingliz tili</button>
+      <button onclick="filterTeacher('Kimyo')">Kimyo</button>
+    </div>
+    <div class="teachers-container" id="teachersContainer"></div>
+    <button class="back-btn" onclick="goHome()">⬅ Orqaga</button>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
